@@ -12,17 +12,31 @@ class Tester {
     
     /// 1. Write a function that takes an array of numbers and returns an array with each of the numbers multiplied by 2
     func multiplyByTwo(numbers original: [Int]) -> [Int] {
-        []
+        let  newArr = original.map{$0 * 2}
+            print(newArr)
+            return newArr
     }
 
     /// 2. Write a function to return the last half of the array, not including the median
     func lastHalf(array: [Int]) -> [Int] {
-        []
+        var mid = array.count / 2
+        if (array.count % 2 != 0) {
+            mid+=1
+        }
+        print(mid)
+        let halfArr = array[mid...]
+        print(halfArr)
+        let result = Array(halfArr)
+        return result
     }
 
     /// 3. Write a function that can creates an array populated with integers going from start (input) to end (input)
     func createArray(from start: Int, to end: Int) -> [Int] {
-        []
+        var newArr = [Int]()
+        for i in start...end {
+            newArr.append(i)
+        }
+        return newArr
     }
 
     /**
@@ -32,18 +46,39 @@ class Tester {
         [7,8,9]]
      */
     func create2DArray() -> [[Int]] {
-        [[]]
+        var nestedArray = [[Int]]()
+        var num = 1
+        for _ in 0...2 {
+            nestedArray.append([num, num+1, num+2] )
+            num+=3
+        }
+        return nestedArray
     }
 
     /// 5. Write a function that returns the number of pairs of elements that sums up to 0
     /// Input [1,2,3,-1,-2,-4] -> Output 2
     func findPairsOfOpposites(nums: [Int]) -> Int {
-        1
+        var pairs = 0
+        for i in 0..<nums.count {
+            for j in i+1..<nums.count {
+                if(nums[i] + nums[j] == 0){
+                    pairs+=1
+                }
+            }
+        }
+        return pairs
     }
     
     /// 6. Returns an array of indexes where the char occurs in input word
     func positionsOf(character: Character, in word: String) -> [Int] {
-        []
+        let charArr = Array(word)
+        var positionArr = [Int]()
+        for i in 0..<charArr.count {
+            if(charArr[i] == character){
+                positionArr.append(i)
+            }
+        }
+        return positionArr
     }
     
     /**
@@ -54,16 +89,60 @@ class Tester {
         Ex. [ I, I, O] -> 2
      */
     func minimumChairs(array: [Character]) -> Int {
-        1
+        var maxCount = 0
+        var currCount = 0
+        for i in 0..<array.count {
+            if(array[i] == "I"){
+                currCount += 1
+                if(currCount > maxCount){
+                    maxCount = currCount
+                }
+            } else if(array[i] == "O"){
+                currCount -= 1
+                if(currCount > maxCount){
+                    currCount = maxCount
+                }
+            }
+        }
+        return maxCount
     }
     
     /// 8. Pig latin but with words separated by spaces
     func pigLatinSentence(sentence: String) -> String {
-        ""
+        let array = Array(sentence)
+        var startPoint = array.startIndex
+        var endPoint = array.startIndex
+        var length = startPoint..<endPoint
+        var subArr = array[length]
+        var subStr = String(subArr)
+        var finalStr = ""
+        for i in 0..<array.count {
+           if(array[i] == " ") {
+               endPoint = array.index(array.startIndex, offsetBy: i)
+            //    startPoint = array.index(array.startIndex, offsetBy:i+1 )
+               print(startPoint)
+               length = startPoint..<endPoint
+               subArr = array[length]
+               subStr = String(subArr)
+               print(length)
+               print(subStr)
+            //    finalStr.append()
+           }
+        }
+        return finalStr
     }
     
     func returnPigLatin(word: String) -> String {
-        ""
+        var result = word
+        let firstChar = word[word.startIndex]
+        if(firstChar.lowercased() == "a" || firstChar.lowercased() == "e" || firstChar.lowercased() == "i" || firstChar.lowercased() == "o" || firstChar.lowercased() == "u"){
+            result.append("yay")
+        } else {
+            result.removeFirst()
+            result.append(firstChar)
+            result.append("ay")
+        }
+        return result
     }
     
     /**
@@ -73,7 +152,16 @@ class Tester {
     
     
     func maxProfit(array: [Int]) -> Int {
-        1
+        var maxProfit = 0
+           for i in 0..<array.count {
+               for j in i+1..<array.count {
+                   var currProfit = array[j] - array[i]
+                   if(currProfit > maxProfit) {
+                       maxProfit = currProfit
+                   }
+               }
+           }
+           return maxProfit
     }
     
     /**
@@ -82,6 +170,16 @@ class Tester {
         [1, 4, 8, 4] -> [1, 2, 3, 2]
      */
     func reduceDistanceKeepPriority(array: [Int]) -> [Int] {
-        []
+        let mySet = Set(array)
+        let sortedNums = mySet.sorted()
+        var dictionary = [Int: Int]()
+        var priorityArr = [Int]()
+        for i in 0..<sortedNums.count{
+            dictionary[sortedNums[i]] = i+1
+        }
+        for num in array {
+            priorityArr.append(dictionary[num] ?? 0)
+        }
+    return priorityArr
     }
 }
