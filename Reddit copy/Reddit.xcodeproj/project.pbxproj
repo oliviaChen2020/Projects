@@ -17,6 +17,7 @@
 		501282612718AF850098F628 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501282602718AF850098F628 /* Response.swift */; };
 		50128264271925000098F628 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50128262271925000098F628 /* CustomTableViewCell.swift */; };
 		50128265271925000098F628 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50128263271925000098F628 /* CustomTableViewCell.xib */; };
+		50410D24271DCBD900073BD8 /* RedditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50410D23271DCBD900073BD8 /* RedditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		501282602718AF850098F628 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		50128262271925000098F628 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		50128263271925000098F628 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		50410D23271DCBD900073BD8 /* RedditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				50128262271925000098F628 /* CustomTableViewCell.swift */,
 				50128263271925000098F628 /* CustomTableViewCell.xib */,
 				5012825E2718AF660098F628 /* ViewModel.swift */,
+				50410D23271DCBD900073BD8 /* RedditView.swift */,
 				501282602718AF850098F628 /* Response.swift */,
 				501282502718AEBC0098F628 /* Main.storyboard */,
 				501282532718AEBD0098F628 /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				5012825F2718AF660098F628 /* ViewModel.swift in Sources */,
 				5012824D2718AEBC0098F628 /* SceneDelegate.swift in Sources */,
 				501282612718AF850098F628 /* Response.swift in Sources */,
+				50410D24271DCBD900073BD8 /* RedditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

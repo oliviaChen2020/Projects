@@ -1,25 +1,24 @@
 //
-//  Response.swift
-//  Reddit
+//  Model.swift
+//  Persistent
 //
-//  Created by Limei  Chen on 10/14/21.
+//  Created by Limei  Chen on 10/18/21.
 //
 
 import Foundation
 
-
-struct Response: Decodable {
+struct Response: Codable {
     let kind: String
     let data: Data
     
-    struct Data: Decodable {
+    struct Data: Codable {
         let dist: Int
-        let children: [Children ]
+        let children: [Children]
         
-        struct Children:  Decodable {
+        struct Children:  Codable {
             let data: nestedData
             
-            struct nestedData: Decodable {
+            struct nestedData: Codable {
                 let subreddit: String
                 let title: String
                 let score: Int

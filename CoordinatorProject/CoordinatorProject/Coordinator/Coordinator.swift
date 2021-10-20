@@ -17,8 +17,10 @@ class Coordinator {
 
 extension Coordinator: ViewControllerDelegate {
     func goToNext() {
-        let vc = UIStoryboard(name:"SecondViewController", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController") as!SecondViewController
+        let vc = UIStoryboard(name:"SecondVC", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController")  as! SecondViewController
         self.navController.pushViewController(vc, animated: true)
     }
         
 }
+
+
