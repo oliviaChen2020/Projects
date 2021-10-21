@@ -19,8 +19,8 @@ class SecondViewController: UIViewController {
 //        if let receivedText = text {
 //            textLabel.text = receivedText
 //    }
-    @IBAction func goNextButton(_ sender: UIButton) {
-    }
+//    @IBAction func goNextButton(_ sender: UIButton) {
+//    }
 }
 
 //extension SecondViewController: ViewControllerDelegate {

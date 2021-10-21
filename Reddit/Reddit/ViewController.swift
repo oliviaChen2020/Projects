@@ -15,6 +15,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         ViewModel.fetch (input:searchBar.text!){ response in
+           
             self.data = response
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -51,6 +52,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let data = data {
+            
            return data.data.children.count
            
         } else {
