@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let searchBar = UISearchBar()
+//    let myTableView: UITableView
     let myTableView = UITableView()
     
     

@@ -37,14 +37,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         let myNib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         tableView.register(myNib, forCellReuseIdentifier: "MyCell")
         
-//        data fetched
-//        ViewModel.fetch (input:"nfl"){ response in
-//            self.data = response
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//
-//        }
+
     }
 
 

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     let tableView = UITableView()
     
-     var responseData:Response?
+     var responseData:Model?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,11 @@ class ViewController: UIViewController {
         if let read = try? DiskStorage.read(fromKey: "encodedData2") {
             print("oliv data retrieve: \(read)")
             let DataStr = Data(read.utf8)
-            guard let responseData =  try? JSONDecoder().decode(Response.self,from: DataStr )else {
+            guard let responseData =  try? JSONDecoder().decode(Model.self,from: DataStr )else {
                 return
             }
             self.responseData = responseData
-            tableView.dataSource = self
+//            tableView.dataSource = self
             tableView.reloadData()
         } else {
             print("no file found")

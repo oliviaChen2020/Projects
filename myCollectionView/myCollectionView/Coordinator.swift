@@ -10,6 +10,7 @@ import UIKit
 
 class Coordinator {
     let navController: UINavigationController
+    
     init(_ rootController: UIViewController) {
         self.navController = UINavigationController(rootViewController: rootController)
     }
